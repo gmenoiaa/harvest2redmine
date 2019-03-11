@@ -3016,6 +3016,14 @@ node-notifier@^4.0.2:
     shellwords "^0.1.0"
     which "^1.0.5"
 
+node-redmine@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/node-redmine/-/node-redmine-0.2.1.tgz#fa8aa04c3c212f668a8aebb9c97d9d9591d70da7"
+  integrity sha512-xNUklrV33eMIplNbbfb1Op3HG1H4q/036PY4sXOher3p39ix75LVwMpP0GbSqLXch7cEpoyBuJblkQeG4T4HPQ==
+  dependencies:
+    debug "^2.2.0"
+    request "^2.75.0"
+
 "nopt@2 || 3":
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
@@ -4022,7 +4030,7 @@ request-promise@^4.2.2:
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
-request@^2.74.0, request@^2.87.0, request@^2.88.0:
+request@^2.74.0, request@^2.75.0, request@^2.87.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
