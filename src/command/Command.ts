@@ -1,3 +1,3 @@
 interface Command {
-    execute(args: Array<string>): Promise<any>;
+    execute(args: Array<any>): Promise<any>;
 }

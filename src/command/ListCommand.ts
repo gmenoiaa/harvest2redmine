@@ -15,12 +15,10 @@ export default class ListCommand implements Command {
         this._redmineUserId = redmineUserId;
     }
 
-    async execute(args: Array<string>): Promise<SyncResult[]> {
+    async execute(args: Array<any>): Promise<SyncResult[]> {
         const daysArg = args.find((arg) => arg.indexOf('--days') >= 0);
-
         const days = daysArg !== undefined ? parseInt(daysArg.replace('--days=', '')) : 1;
-        const dryRun = args.find((arg) => arg.indexOf('--push') >= 0) === undefined;
-
+        const dryRun = args.find((arg) => arg.indexOf('--dry-run') >= 0) !== undefined;
         const harvestEntries = await this._getHarvestEntries(days);
         const results = harvestEntries.map(async (harvestEntry) => {
             // @ts-ignore
@@ -60,6 +58,9 @@ export default class ListCommand implements Command {
     private _getSince(days: number): Date {
         const d = new Date();
         d.setDate(d.getDate() - days);
+        d.setMinutes(0);
+        d.setSeconds(0);
+        d.setHours(0);
         return d;
     }
 

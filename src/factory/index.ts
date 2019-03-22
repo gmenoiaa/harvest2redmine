@@ -2,21 +2,21 @@
 import Redmine from 'node-redmine';
 import Harvest from 'harvest';
 
-export function createHarvest() {
+export function createHarvest(config: any) {
     return new Harvest({
-        subdomain: process.env.HARVEST_SUBDOMAIN as string,
+        subdomain: config.subdomain,
         userAgent: 'harvest2redmine',
         concurrency: 1,
         auth: {
-            accessToken: process.env.HARVEST_ACCESS_TOKEN as string,
-            accountId: process.env.HARVEST_ACCOUNT_ID as string,
-        }
+            accessToken: config.accessToken,
+            accountId: config.accountId,
+        },
     });
 }
 
-export function createRedmine() {
+export function createRedmine(config: any) {
     return new Redmine(
-        process.env.REDMINE_HOST as string,
-        { apiKey: process.env.REDMINE_APIKEY as string }
+        config.host,
+        { apiKey: config.apiKey }
     );
 }

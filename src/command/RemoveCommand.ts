@@ -9,7 +9,7 @@ export default class RemoveCommand implements Command {
         this._projectId = projectId;
     }
 
-    async execute(args: Array<string>): Promise<void> {
+    async execute(args: Array<any>): Promise<void> {
         const taskNumber = parseInt(args[0]);
         const taskNameToRemove = `#${taskNumber}`;
 
